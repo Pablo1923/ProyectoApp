@@ -81,7 +81,7 @@ class WelcomePage extends StatelessWidget {
                   ),
                   const Spacer(flex: 1),
                   const Text(
-                    'BIENVENIDOS',
+                    'RESTAURANTE',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
