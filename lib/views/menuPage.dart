@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:menu_restaurante/views/wcWidgets.dart';
+import 'package:menu_restaurante/views/loginPage.dart';
 
-class MenuPage extends StatefulWidget {
+class MenuPage extends StatelessWidget {
   const MenuPage({Key? key}) : super(key: key);
 
-  @override
-  State<MenuPage> createState() => _MenuPageState();
-}
-
-class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -57,9 +52,7 @@ class _MenuPageState extends State<MenuPage> {
                 ),
               ),
               child: Column(
-                children: [
-                  Image.asset("assets/neon2.png"),
-                ],
+                children: [],
               ),
             ),
           ),

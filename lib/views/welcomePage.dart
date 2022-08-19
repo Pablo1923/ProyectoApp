@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:menu_restaurante/views/wcWidgets.dart';
 import 'package:menu_restaurante/views/loginPage.dart';
+import 'package:menu_restaurante/views/menuPage.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -81,7 +82,7 @@ class WelcomePage extends StatelessWidget {
                   ),
                   const Spacer(flex: 1),
                   const Text(
-                    'RESTAURANTE',
+                    'BIENVENIDO',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 30,
@@ -118,6 +119,24 @@ class WelcomePage extends StatelessWidget {
                     },
                     const Color(0xFF000000),
                     "Log In",
+                    180,
+                    40,
+                  ),
+                  const Spacer(flex: 1),
+                  button(
+                    //Menupage
+                    () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const MenuPage();
+                          },
+                        ),
+                      );
+                    },
+                    const Color(0xFF000000),
+                    "Ver Menu",
                     180,
                     40,
                   ),
