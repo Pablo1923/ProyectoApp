@@ -76,6 +76,21 @@ class LoginPage extends StatelessWidget {
                         ),
                         textAlign: TextAlign.center,
                       ),
+                      Container(
+                        child: const SizedBox(
+                          width: 180,
+                          child: TextField(
+                            decoration: InputDecoration(
+                                hintText: "Digite su usuario",
+                                hintStyle: TextStyle(
+                                  color: Color(0xFFFAED27),
+                                )),
+                            style: TextStyle(
+                              color: Color(0xFFFAED27),
+                            ),
+                          ),
+                        ),
+                      ),
                       const Spacer(flex: 1),
                       const Text(
                         'Contraseña',
@@ -85,6 +100,21 @@ class LoginPage extends StatelessWidget {
                           color: Color(0xFFD6F0CC),
                         ),
                         textAlign: TextAlign.center,
+                      ),
+                      Container(
+                        child: const SizedBox(
+                          width: 180,
+                          child: TextField(
+                            decoration: InputDecoration(
+                                hintText: "Digite su contraseña",
+                                hintStyle: TextStyle(
+                                  color: Color(0xFF0159FC),
+                                )),
+                            style: TextStyle(
+                              color: Color(0xFF0159FC),
+                            ),
+                          ),
+                        ),
                       ),
                       const Spacer(flex: 1),
                       const Spacer(flex: 1),

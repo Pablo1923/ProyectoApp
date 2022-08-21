@@ -13,7 +13,7 @@ class WelcomePage extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Neon foodies',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -100,7 +100,7 @@ class WelcomePage extends StatelessWidget {
                       ),
                       const Spacer(flex: 1),
                       const Text(
-                        'Al restaurante bar neón más grande de Medellín.',
+                        'Al restaurante restaurante neón más grande de Medellín.',
                         style: TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.w300,
@@ -127,7 +127,7 @@ class WelcomePage extends StatelessWidget {
                           );
                         },
                         const Color(0xFF000000),
-                        "Log In",
+                        "Iniciar sesión",
                         180,
                         40,
                       ),

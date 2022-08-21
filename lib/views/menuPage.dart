@@ -1,12 +1,19 @@
-// ignore_for_file: unnecessary_new
-
 import 'package:flutter/material.dart';
 import 'package:menu_restaurante/views/wcWidgets.dart';
 import 'package:menu_restaurante/views/welcomePage.dart';
 
-class MenuPage extends StatelessWidget {
+class MenuPage extends StatefulWidget {
   const MenuPage({Key? key}) : super(key: key);
 
+  @override
+  State<MenuPage> createState() => _MenuPageState();
+}
+
+class _MenuPageState extends State<MenuPage> {
+  String? pf = 'Seleccionar';
+  String? ent = 'Seleccionar';
+  String? beb = 'Seleccionar';
+  String? pos = 'Seleccionar';
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -87,8 +94,9 @@ class MenuPage extends StatelessWidget {
                             0xFF000000), //Este te da el color del fondo que necesitabas
                         child: DropdownButton<String>(
                           value:
-                              'Papas toci-queso', //Aqui debes poner una variable que cambiará en la función
+                              ent, //Aqui debes poner una variable que cambiará en la función
                           items: <String>[
+                            'Seleccionar',
                             'Papas toci-queso',
                             'Patacones guacamólicos',
                             'Yuquitas chongo',
@@ -106,7 +114,9 @@ class MenuPage extends StatelessWidget {
                             );
                           }).toList(),
                           onChanged: (String? newValue) {
-                            //Acá asignas a esa variable el valor nuevo seleccionado
+                            setState(() {
+                              ent = newValue;
+                            });
                           },
                           dropdownColor: const Color(
                               0xFF332E30), //Este te da color de fondo en la lista de selección
@@ -127,9 +137,10 @@ class MenuPage extends StatelessWidget {
                       Container(
                         color: Color(0xFF000000),
                         child: DropdownButton<String>(
-                          value: 'Delirio de burguer',
+                          value: pf,
                           items: <String>[
-                            'Delirio de burguer',
+                            'Seleccionar',
+                            'Delirio burguer',
                             'Tacoticos',
                             'Perritosky',
                             'Pizzorinny',
@@ -145,7 +156,9 @@ class MenuPage extends StatelessWidget {
                             );
                           }).toList(),
                           onChanged: (String? newValue) {
-                            //Acá asignas a esa variable el valor nuevo seleccionado
+                            setState(() {
+                              pf = newValue;
+                            });
                           },
                           dropdownColor: const Color(0xFF332E30),
                         ),
@@ -167,8 +180,9 @@ class MenuPage extends StatelessWidget {
                             0xFF000000), //Este te da el color del fondo que necesitabas
                         child: DropdownButton<String>(
                           value:
-                              'Gaseosa', //Aqui debes poner una variable que cambiará en la función
+                              beb, //Aqui debes poner una variable que cambiará en la función
                           items: <String>[
+                            'Seleccionar',
                             'Gaseosa',
                             'Jugo en agua',
                             'Jugo en leche',
@@ -186,10 +200,11 @@ class MenuPage extends StatelessWidget {
                             );
                           }).toList(),
                           onChanged: (String? newValue) {
-                            //Acá asignas a esa variable el valor nuevo seleccionado
+                            setState(() {
+                              beb = newValue;
+                            });
                           },
-                          dropdownColor: const Color(
-                              0xFF332E30), //Este te da color de fondo en la lista de selección
+                          dropdownColor: const Color(0xFF332E30),
                         ),
                       ),
 
@@ -204,23 +219,38 @@ class MenuPage extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                       Container(
-                        child: new DropdownButton<String>(
+                        color: Color(
+                            0xFF000000), //Este te da el color del fondo que necesitabas
+                        child: DropdownButton<String>(
+                          value:
+                              pos, //Aqui debes poner una variable que cambiará en la función
                           items: <String>[
-                            'Flan de caramelo',
-                            'Envidia masmelica',
-                            'Postre de milo',
-                            'Quesuditos',
-                            'Pan ajudos'
+                            'Seleccionar',
+                            'Postre milongo',
+                            'Flan de leche',
+                            'Chocovolvcán',
+                            'Frambuesito',
                           ].map((String value) {
                             return new DropdownMenuItem<String>(
                               value: value,
-                              child: new Text(value),
+                              child: new Text(
+                                value,
+                                style: TextStyle(
+                                  color: Color(0xFF0009E8),
+                                ),
+                              ),
                             );
                           }).toList(),
-                          onChanged: (_) {},
-                          dropdownColor: const Color(0xFF332E30),
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              pos = newValue;
+                            });
+                          },
+                          dropdownColor: const Color(
+                              0xFF332E30), //Este te da color de fondo en la lista de selección
                         ),
                       ),
+
                       const Spacer(flex: 1),
                       const Spacer(flex: 1),
                       button(
